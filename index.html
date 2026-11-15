@@ -21,12 +21,13 @@
 
   <nav class="nav">
     <a href="#top" class="nav-logo">am<span class="blink">_</span></a>
-    <div class="nav-links">
-      <a href="#experience">experience</a>
-      <a href="#projects">projects</a>
-      <a href="#education">education</a>
-      <a href="https://www.linkedin.com/in/avanija-menon/" target="_blank" rel="noopener">linkedin ↗</a>
+    <div class="tabs" role="navigation" aria-label="Sections">
+      <a class="tab" href="#experience">Experience</a>
+      <a class="tab" href="#projects">Projects</a>
+      <a class="tab" href="#education">Education</a>
+      <a class="tab" href="#other">Other</a>
     </div>
+    <a class="nav-ext" href="https://www.linkedin.com/in/avanija-menon/" target="_blank" rel="noopener">LinkedIn ↗</a>
   </nav>
 
   <header class="hero" id="top" data-bg="hand">
@@ -167,6 +168,16 @@
       entries.forEach(e => { if (e.isIntersecting) show(e.target.dataset.bg); });
     }, { rootMargin: '-45% 0px -45% 0px' });
     document.querySelectorAll('[data-bg]:not(.bg-layer)').forEach(s => io.observe(s));
+
+    // Highlight the tab for the section currently on screen.
+    const tabs = document.querySelectorAll('.tab');
+    const tabIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('header.hero, main .section').forEach(s => tabIo.observe(s));
   </script>
 </body>
 </html>
