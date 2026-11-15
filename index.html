@@ -9,137 +9,184 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ASCII art backdrop: one fixed layer per piece, crossfaded as you scroll -->
+  <div class="backdrop" aria-hidden="true">
+    <video class="bg-layer is-active" data-bg="hand" src="assets/hand.mp4" poster="assets/hand-poster.jpg" autoplay muted loop playsinline></video>
+    <div class="bg-layer" data-bg="flare" style="background-image: url('assets/flare.jpg')"></div>
+    <div class="bg-layer" data-bg="glow" style="background-image: url('assets/glow.jpg')"></div>
+    <div class="bg-layer" data-bg="sunrise" style="background-image: url('assets/sunrise.jpg')"></div>
+    <div class="veil"></div>
+  </div>
+
   <nav class="nav">
     <a href="#top" class="nav-logo">am<span class="blink">_</span></a>
     <div class="nav-links">
       <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
       <a href="#education">education</a>
-      <a href="#other">other</a>
       <a href="https://www.linkedin.com/in/avanija-menon/" target="_blank" rel="noopener">linkedin ↗</a>
     </div>
   </nav>
 
-  <header class="hero" id="top">
-    <div class="hero-text">
-      <p class="eyebrow">// hello, world</p>
-      <h1>Avanija<br>Menon</h1>
-      <p class="tagline">AI Engineer in London. Astrophysicist turned machine learning builder, working on LLMs, retrieval and applied AI.</p>
-      <div class="hero-links">
-        <a class="btn" href="https://www.linkedin.com/in/avanija-menon/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn ghost" href="#experience">See my work ↓</a>
-      </div>
-    </div>
-    <div class="hero-media">
-      <video src="assets/hand.mp4" poster="assets/hand-poster.jpg" autoplay muted loop playsinline></video>
+  <header class="hero" id="top" data-bg="hand">
+    <h1>Avanija<br>Menon</h1>
+    <p class="tagline">AI Engineer in London. Astrophysicist turned machine learning builder, working on LLMs, retrieval and applied AI.</p>
+    <div class="hero-links">
+      <a class="btn" href="https://www.linkedin.com/in/avanija-menon/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn ghost" href="https://github.com/avanijamenon" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </header>
 
-  <section class="banner" style="--img: url('assets/flare.jpg')">
-    <p>&gt; currently building AI at <strong>CUBE</strong></p>
-  </section>
+  <main>
+    <section id="experience" class="section" data-bg="flare">
+      <h2><span class="num">01</span> Experience</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">Jun 2026 — Present</div>
+          <div class="what">
+            <h3>AI Engineer</h3>
+            <p class="org">CUBE · London</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Oct 2024 — May 2026</div>
+          <div class="what">
+            <h3>Data &amp; AI Engineer</h3>
+            <p class="org">Shell · London</p>
+            <ul class="tags"><li>Azure AI Studio</li><li>RAG</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Apr 2024 — Sep 2024</div>
+          <div class="what">
+            <h3>Machine Learning Researcher</h3>
+            <p class="org">LSEG (London Stock Exchange Group)</p>
+            <p>MSc thesis collaboration: an automated LLM-based pipeline that builds asset-level databases to assess deforestation impact in high-impact sectors. Accepted at the ACL ClimateNLP Workshop 2025.</p>
+            <ul class="tags"><li>NLP</li><li>LLMs</li><li>Machine Learning</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Jan 2024 — Apr 2024</div>
+          <div class="what">
+            <h3>Software Engineering &amp; ML Researcher</h3>
+            <p class="org">PhycoWorks · London</p>
+            <p>Transfer learning for expression prediction performance. Won the Corporate Partnership Programme MSc Group Project Prize.</p>
+            <ul class="tags"><li>Machine Learning</li><li>Statistical Analysis</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Summer</div>
+          <div class="what">
+            <h3>Data Science &amp; ML Summer Analyst</h3>
+            <p class="org">Standard Chartered Bank · Internship</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Jun 2022 — Sep 2022</div>
+          <div class="what">
+            <h3>Summer Research Intern</h3>
+            <p class="org">UCL · Brian Duff Studentship</p>
+            <p>MARVEL project: rovibrational linelist of formaldehyde H<sub>2</sub><sup>13</sup>CO.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-  <section id="experience" class="section">
-    <h2><span class="num">01</span> Experience</h2>
-    <ol class="timeline">
-      <li>
-        <div class="when">Jun 2026 — Present</div>
-        <div class="what">
-          <h3>AI Engineer</h3>
-          <p class="org">CUBE · London</p>
-        </div>
-      </li>
-      <li>
-        <div class="when">Oct 2024 — May 2026</div>
-        <div class="what">
-          <h3>Data &amp; AI Engineer</h3>
-          <p class="org">Shell · London</p>
-          <ul class="tags"><li>Azure AI Studio</li><li>RAG</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Apr 2024 — Sep 2024</div>
-        <div class="what">
-          <h3>Machine Learning Researcher</h3>
-          <p class="org">LSEG (London Stock Exchange Group)</p>
-          <p>MSc thesis collaboration: an automated LLM-based pipeline that builds asset-level databases to assess deforestation impact in high-impact sectors. Accepted at the ACL ClimateNLP Workshop 2025.</p>
-          <ul class="tags"><li>NLP</li><li>LLMs</li><li>Machine Learning</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Jan 2024 — Apr 2024</div>
-        <div class="what">
-          <h3>Software Engineering &amp; ML Researcher</h3>
-          <p class="org">PhycoWorks · London</p>
-          <p>Transfer learning for expression prediction performance. Won the Corporate Partnership Programme MSc Group Project Prize.</p>
-          <ul class="tags"><li>Machine Learning</li><li>Statistical Analysis</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Summer</div>
-        <div class="what">
-          <h3>Data Science &amp; ML Summer Analyst</h3>
-          <p class="org">Standard Chartered Bank · Internship</p>
-        </div>
-      </li>
-      <li>
-        <div class="when">Jun 2022 — Sep 2022</div>
-        <div class="what">
-          <h3>Summer Research Intern</h3>
-          <p class="org">UCL · Brian Duff Studentship</p>
-          <p>MARVEL project: rovibrational linelist of formaldehyde H<sub>2</sub><sup>13</sup>CO.</p>
-        </div>
-      </li>
-    </ol>
-  </section>
+    <section id="projects" class="section" data-bg="glow">
+      <h2><span class="num">02</span> Projects</h2>
 
-  <section class="banner" style="--img: url('assets/glow.jpg')">
-    <p>&gt; from stars to neural nets</p>
-  </section>
-
-  <section id="education" class="section">
-    <h2><span class="num">02</span> Education</h2>
-    <div class="cards">
-      <article class="card">
-        <div class="when">Sep 2023 — Sep 2024</div>
-        <h3>Imperial College London</h3>
-        <p class="org">MSc, Artificial Intelligence</p>
-        <p><strong>Award:</strong> Corporate Partnership Programme MSc Group Project Prize</p>
-        <p><strong>Thesis:</strong> An Automated LLM-Based Pipeline for Asset-Level Database Creation to Assess Deforestation Impact in High Impact Sectors, in partnership with LSEG. Paper accepted to ACL ClimateNLP 2025.</p>
-        <ul class="tags">
-          <li>Machine Learning</li><li>Deep Learning</li><li>Reinforcement Learning</li><li>NLP</li>
-          <li>Computational Finance</li><li>Software Eng. for ML Systems</li><li>Ethics, Fairness &amp; Explanation in AI</li><li>Symbolic AI</li>
-        </ul>
+      <article class="feature">
+        <img src="assets/keepsake.png" alt="Keepsake logo: a smiling peach blob with a sparkle" width="128" height="128">
+        <div>
+          <h3>keepsake</h3>
+          <p>A cosy corner of the internet for collecting moments with people you love. Drop photos into a shared memory box; keepsake picks the good bits and pastes them into an editable, collaborative scrapbook, with an open-source vision model writing grounded captions.</p>
+          <ul class="tags"><li>TypeScript</li><li>Next.js</li><li>Convex</li><li>Vision LLMs</li></ul>
+          <div class="links">
+            <a href="https://keepsake-ava-menon.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+            <a href="https://github.com/avanijamenon/keepsake" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
       </article>
-      <article class="card">
-        <div class="when">Sep 2020 — Jun 2023</div>
-        <h3>UCL</h3>
-        <p class="org">BSc, Astrophysics · First Class Honours</p>
-        <p><strong>Projects:</strong> Convolutional Neural Network Neutrino Event Classifier; Designing a Novel Superconducting Experiment for the 3rd Year Physics Practical Module.</p>
-        <p><strong>Societies:</strong> Physics, Artificial Intelligence, Space, Engineers Without Borders.</p>
-      </article>
-    </div>
-  </section>
 
-  <section id="other" class="section">
-    <h2><span class="num">03</span> Other</h2>
-    <div class="cards">
-      <article class="card">
-        <div class="when">2025</div>
-        <h3>Publication</h3>
-        <p>LLM-based asset-level database creation for deforestation impact assessment. ACL ClimateNLP Workshop 2025.</p>
-      </article>
-      <article class="card">
-        <div class="when">Apr 2018 — May 2018</div>
-        <h3>Speaker · TEDEd Club</h3>
-        <p>Gave the talk “The Actual Matter with Antimatter”, which was nominated for best talk.</p>
-      </article>
-    </div>
-  </section>
+      <div class="cards">
+        <a class="card" href="https://github.com/avanijamenon/Automated-LLM-pipeline-for-asset-level-database-creation" target="_blank" rel="noopener">
+          <h3>Automated LLM pipeline for asset-level databases</h3>
+          <p>Extracts, cleans and validates asset-level environmental data from SEC EDGAR filings. IRZ-CoT prompting lifts F1 by 11.9%; Retrieval-Augmented Validation raises coverage by 12.5%.</p>
+          <ul class="tags"><li>LLMs</li><li>RAG</li><li>NLP</li></ul>
+        </a>
+        <a class="card" href="https://github.com/avanijamenon/Neutrino-Event-Classification-with-ML" target="_blank" rel="noopener">
+          <h3>Neutrino event classification</h3>
+          <p>A multi-view CNN classifying neutrino events in a NOvA-like long-baseline oscillation experiment. 0.85 accuracy on events, 0.894 on flavour.</p>
+          <ul class="tags"><li>CNN</li><li>Physics</li></ul>
+        </a>
+        <a class="card" href="https://github.com/avanijamenon/Titanic-Survival-Prediction-with-XAI" target="_blank" rel="noopener">
+          <h3>Titanic survival with explainable AI</h3>
+          <p>A neural network explained with SHAP, SVS and DeepLIFT, plus counterfactuals (NNCE, WAC) showing the minimal changes that flip a prediction.</p>
+          <ul class="tags"><li>XAI</li><li>Neural Networks</li></ul>
+        </a>
+        <a class="card" href="https://github.com/avanijamenon/Accuracy-Fairness-Tradeoff-in-ML-Model-Selection" target="_blank" rel="noopener">
+          <h3>Accuracy–fairness trade-off</h3>
+          <p>Standard vs reweighed logistic regression, balancing accuracy against equality of opportunity and showing how regularisation moves both.</p>
+          <ul class="tags"><li>Fairness</li><li>Model Selection</li></ul>
+        </a>
+      </div>
+    </section>
 
-  <footer class="footer" style="--img: url('assets/sunrise.jpg')">
+    <section id="education" class="section" data-bg="sunrise">
+      <h2><span class="num">03</span> Education</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="when">Sep 2023 — Sep 2024</div>
+          <h3>Imperial College London</h3>
+          <p class="org">MSc, Artificial Intelligence</p>
+          <p><strong>Award:</strong> Corporate Partnership Programme MSc Group Project Prize</p>
+          <p><strong>Thesis:</strong> An Automated LLM-Based Pipeline for Asset-Level Database Creation to Assess Deforestation Impact in High Impact Sectors, in partnership with LSEG. Paper accepted to ACL ClimateNLP 2025.</p>
+          <ul class="tags">
+            <li>Machine Learning</li><li>Deep Learning</li><li>Reinforcement Learning</li><li>NLP</li>
+            <li>Computational Finance</li><li>Software Eng. for ML Systems</li><li>Ethics, Fairness &amp; Explanation in AI</li><li>Symbolic AI</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="when">Sep 2020 — Jun 2023</div>
+          <h3>UCL</h3>
+          <p class="org">BSc, Astrophysics · First Class Honours</p>
+          <p><strong>Projects:</strong> Convolutional Neural Network Neutrino Event Classifier; Designing a Novel Superconducting Experiment for the 3rd Year Physics Practical Module.</p>
+          <p><strong>Societies:</strong> Physics, Artificial Intelligence, Space, Engineers Without Borders.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="other" class="section" data-bg="sunrise">
+      <h2><span class="num">04</span> Other</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="when">2025</div>
+          <h3>Publication</h3>
+          <p>LLM-based asset-level database creation for deforestation impact assessment. ACL ClimateNLP Workshop 2025.</p>
+        </article>
+        <article class="card">
+          <div class="when">Apr 2018 — May 2018</div>
+          <h3>Speaker · TEDEd Club</h3>
+          <p>Gave the talk “The Actual Matter with Antimatter”, which was nominated for best talk.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-bg="hand">
     <h2>Let’s connect.</h2>
     <a class="btn" href="https://www.linkedin.com/in/avanija-menon/" target="_blank" rel="noopener">linkedin.com/in/avanija-menon ↗</a>
     <p class="small">© 2026 Avanija Menon</p>
   </footer>
+
+  <script>
+    // Crossfade the fixed ASCII backdrop to match whichever section fills the middle of the screen.
+    const layers = document.querySelectorAll('.bg-layer');
+    const show = (name) => layers.forEach(l => l.classList.toggle('is-active', l.dataset.bg === name));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) show(e.target.dataset.bg); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('[data-bg]:not(.bg-layer)').forEach(s => io.observe(s));
+  </script>
 </body>
 </html>
