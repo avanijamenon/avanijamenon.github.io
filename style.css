@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Aurelia";
+  src: url("assets/fonts/aurelia.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --bg: #05060a;
   --text: #eceef3;
@@ -7,7 +14,7 @@
   --glass: rgba(10, 12, 18, 0.45);
   --line: rgba(255, 255, 255, 0.08);
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
-  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  --sans: "Aurelia", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; }
